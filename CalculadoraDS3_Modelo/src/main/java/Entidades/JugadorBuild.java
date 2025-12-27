@@ -2,13 +2,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+package Entidades;
 
-package Controles;
+import Enums.StatOfensivos;
+import java.util.Map;
 
 /**
  *
  * @author Abraham Coronel
  */
-public class ControlArmas {
+public record JugadorBuild(Map<StatOfensivos, Integer> stats) {
+    
+    public int getValorStat(StatOfensivos stat) {
+        return stats.getOrDefault(stat, 10);
+    }
 
 }
